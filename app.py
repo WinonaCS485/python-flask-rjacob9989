@@ -3,7 +3,7 @@ import pymysql.cursors
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/index')
 def index():
 
     # Connect to the database
@@ -21,8 +21,6 @@ def index():
         
          # execute the SQL command
          cursor.execute(sql, (key,))
-        
-        string_result =  cursor
 
          # get the results
         for result in cursor:
@@ -37,9 +35,9 @@ def index():
     finally:
         connection.close()
 
-        return render_template('db_test.html', result =result )
+        #return render_template('db_test.html', result )
 
-    return render_template('index.html')
+    return render_template('db_test.html', result=result)
 
 @app.route('/cakes')
 def cakes():

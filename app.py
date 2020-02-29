@@ -30,8 +30,8 @@ def dbtest():
         with connection.cursor() as cursor:
          # Select all Students
          #key = input("Enter a name to search:\n" )
-         sql = "SELECT * from Students"
-         # WHERE Name LIKE %s"
+         sql = """SELECT * from Students"""
+         # WHERE Name LIKE %s"""
         
          # execute the SQL command
          cursor.execute(sql)
